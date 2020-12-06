@@ -112,8 +112,8 @@ def passport_checker(L):
             if "ecl" in search_string:
                 index = search_string.index("ecl")
                 eye_color = search_string[index+4:index+7]
-                if eye_color == "amb" or eye_color == "blu" or eye_color == "brn" or eye_color == "gry" or \
-                        eye_color == "grn" or eye_color == "hzl" or eye_color == "oth":
+                colors = ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"]
+                if eye_color in colors:
                     key_counter += 1
                     print("Eye color OK! " + eye_color)
                 else:
