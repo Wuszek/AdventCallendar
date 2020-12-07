@@ -51,7 +51,27 @@ def highest_id(ID_list):
     print("Max ID: " + str(max(ID_list)))
     return max(ID_list)
 
+def min_id(ID_list):
+    print("Min ID: " + str(min(ID_list)))
+    return min(ID_list)
+
 seats_checker(list_input)
 highest_id(seat_id_list)
+min_id(seat_id_list)
 
+sorted_list = []
+sorted_list.extend(range(80, 927))
+# print(sorted_list)
 
+def Diff(li1, li2):
+    return (list(list(set(li1)-set(li2)) + list(set(li2)-set(li1))))
+
+diff_list = (Diff(seat_id_list, sorted_list))
+
+for x in diff_list:
+    n = 0
+    number = diff_list[n]
+    if number < 70:
+        diff_list.remove(number)
+        n += 1
+    print("Your seat is: " + str(diff_list[0]))
