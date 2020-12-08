@@ -3,7 +3,7 @@ with open('input.txt') as f:
 
 #print(list_input)
 
-def passport_checker(L):
+def answer_counter(L):
 
     n = 0
     sum_string = ""
@@ -26,4 +26,4 @@ def passport_checker(L):
 
     print(counts_sum)
 
-passport_checker(list_input)
+answer_counter(list_input)
