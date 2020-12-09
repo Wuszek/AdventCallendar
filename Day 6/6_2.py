@@ -16,24 +16,16 @@ def answer_counter(L):
             people_count += 1
 
         elif x =="":
-            if people_count == 1:
-                #print(sum_string)
-                unique = len(set(sum_string))
-                sum_string = ""
-                counts_sum += unique
-                people_count = 0
+            for keys in sum_string:
+                freq[keys] = freq.get(keys, 0) + 1
 
-            elif people_count > 1:
+            for x in freq:
+                if freq.get(x, 0) == people_count:
+                    counts_sum += 1
 
-                for keys in sum_string:
-                    freq[keys] = freq.get(keys, 0) + 1
-
-                for x in freq:
-                     if freq.get(x, 0) == people_count:
-                         counts_sum += 1
-                freq = {}
-                sum_string = ""
-                people_count = 0
+            freq = {}
+            sum_string = ""
+            people_count = 0
 
     print("Suma:" + str(counts_sum))
 
